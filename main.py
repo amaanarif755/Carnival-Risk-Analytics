@@ -36,6 +36,8 @@ train_df['start_dayofweek'] = train_df['Policy Start Date'].dt.dayofweek
 train_df['start_quarter'] = ((train_df['start_month']-1)//3 + 1)
 train_df['is_weekend'] = (train_df['start_dayofweek'] >=5).astype(int)
 
+
+
 # Drop original date column
 X = train_df.drop(columns=[target, id_col, 'Policy Start Date'])
 y = train_df[target]
